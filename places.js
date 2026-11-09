@@ -6,7 +6,7 @@
 
 const places = [
   {
-    name: "Tokyo, Japan",
+    name: "Osaka, Japan",
     lat: 35.6945,
     lng: 135.4994,
     visited: true,
