@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- The globe gets drawn into this div -->
+  <div id="globe"></div>
+
+  <!-- Side panel: hidden until you click a pin -->
+  <aside id="panel" class="hidden">
+    <button id="close-btn" aria-label="Close">&times;</button>
+    <h2 id="place-name"></h2>
+    <p id="place-status"></p>
+    <p id="place-dates"></p>
+    <p id="place-notes"></p>
+
+    <div id="place-photos"></div>
+
+    <h3 id="itinerary-title">Itinerary</h3>
+    <ul id="place-itinerary"></ul>
+  </aside>
+
+  <!-- Libraries (loaded from the internet) -->
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <!-- Our own code. Order matters: data first, then the script that uses it -->
+  <script src="places.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
