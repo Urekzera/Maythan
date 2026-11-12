@@ -7,8 +7,8 @@
 const places = [
   {
     name: "Osaka, Japan",
-    lat: 35.6945,
-    lng: 135.4994,
+    lat: 34.6937,
+    lng: 135.5023,
     visited: true,
     dates: "1/31/2025 - 2/7/2025",
     notes: "Our first overseas trip together!",
