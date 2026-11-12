@@ -86,24 +86,103 @@ const places = [
     itinerary: []
   },
   {
-    name: "Portola Valley, USA",
-    lat: 37.3841,
-    lng: -122.2352,
-    visited: true,
-    dates: "",
-    notes: "",
-    photos: [],
-    itinerary: []
-  },
-  {
     name: "Washington D.C., USA",
     lat: 38.9072,
     lng: -77.0369,
     visited: true,
-    dates: "",
-    notes: "",
+    dates: "7/2/2026 - 7/5/2026",
+    notes: "Visiting May's friend and exploring the capitol",
     photos: [],
-    itinerary: []
+    spots: [
+      {
+        name: "National Air and Space Museum",
+        lat: 38.8882,
+        lng: -77.0199,
+        date: "Day 1",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Planet Word",
+        lat: 38.9017,
+        lng: -77.0297,
+        date: "Day 2",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "The People's House: A White House Experience",
+        lat: 38.8990,
+        lng: -77.0394,
+        date: "Day 2",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "White House",
+        lat: 38.8977,
+        lng: -77.0365,
+        date: "Day 2",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Milken Center for Advancing the American Dream (MCAAD)",
+        lat: 38.8984,
+        lng: -77.0337,
+        date: "Day 2",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Capitol Hill",
+        lat: 38.8899,
+        lng: -77.0091,
+        date: "Day 2",
+        notes: "Concert celebrating the Fourth of July",
+        photos: []
+      },
+      {
+        name: "National Museum of Natural History",
+        lat: 38.8913,
+        lng: -77.0261,
+        date: "Day 3",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Glover Park Hotel Georgetown",
+        lat: 38.9213,
+        lng: -77.0727,
+        date: "Day 3",
+        notes: "Watched the Fourth of July fireworks from the hotel at night",
+        photos: []
+      },
+      {
+        name: "Lincoln Memorial",
+        lat: 38.8893,
+        lng: -77.0502,
+        date: "Day 4",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Washington Monument",
+        lat: 38.8895,
+        lng: -77.0353,
+        date: "Day 4",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "World War II Memorial",
+        lat: 38.8894,
+        lng: -77.0405,
+        date: "Day 4",
+        notes: "",
+        photos: []
+      }
+    ]
   },
   {
     name: "Hsinchu, Taiwan",
