@@ -84,5 +84,75 @@ const places = [
     notes: "Exploring NYC and World Cup 2026!",
     photos: [],
     itinerary: []
+  },
+  {
+    name: "Portola Valley, USA",
+    lat: 37.3841,
+    lng: -122.2352,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
+  },
+  {
+    name: "Washington D.C., USA",
+    lat: 38.9072,
+    lng: -77.0369,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
+  },
+  {
+    name: "Hsinchu, Taiwan",
+    lat: 24.8138,
+    lng: 120.9675,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
+  },
+  {
+    name: "Taipei, Taiwan",
+    lat: 25.0330,
+    lng: 121.5654,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
+  },
+  {
+    name: "Taitung, Taiwan",
+    lat: 22.7583,
+    lng: 121.1444,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
+  },
+  {
+    name: "Taichung, Taiwan",
+    lat: 24.1477,
+    lng: 120.6736,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
+  },
+  {
+    name: "Tainan, Taiwan",
+    lat: 22.9999,
+    lng: 120.2270,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    itinerary: []
   }
 ];
