@@ -1,35 +1,54 @@
 // ---------- 1. Create the globe ----------
 const globeEl = document.getElementById("globe");
 
-const world = Globe()(globeEl)
-  .globeImageUrl("https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg")
-  .backgroundImageUrl("https://unpkg.com/three-globe/example/img/night-sky.png")
-
-  // Pins: one per entry in places.js
-  .pointsData(places)
-  .pointLat("lat")
-  .pointLng("lng")
-  .pointAltitude(0.03)
-  .pointRadius(0.6)
-  .pointColor(p => (p.visited ? "#ff4d6d" : "#ffd166"))   // pink = been, yellow = wish list
-  .pointLabel(p => `<b>${p.name}</b>`)                     // hover tooltip
-
-  // What happens when a pin is clicked
-  .onPointClick(place => {
-    showPlace(place);
-    world.pointOfView({ lat: place.lat, lng: place.lng, altitude: 1.6 }, 1000); // fly there
-  });
-
-// Slow auto-rotate, stops when you grab the globe
-world.controls().autoRotate = true;
-world.controls().autoRotateSpeed = 0.4;
-globeEl.addEventListener("pointerdown", () => {
-  world.controls().autoRotate = false;
+const map = new maplibregl.Map({
+  container: globeEl,
+  style: "https://tiles.openfreemap.org/styles/liberty",   // free map tiles, no key needed
+  center: [135, 30],                                       // [lng, lat] to start at
+  zoom: 1.5
 });
 
-// Keep the globe sized to the window
-window.addEventListener("resize", () => {
-  world.width(window.innerWidth).height(window.innerHeight);
+// Show the map as a 3D globe instead of flat
+map.on("style.load", () => {
+  map.setProjection({ type: "globe" });
+});
+
+// Pins: one per entry in places.js
+places.forEach(place => {
+  const pin = document.createElement("div");
+  pin.className = "pin";
+  pin.style.background = place.visited ? "#ff4d6d" : "#ffd166";   // pink = been, yellow = wish list
+  pin.title = place.name;                                          // hover tooltip
+
+  // What happens when a pin is clicked
+  pin.addEventListener("click", () => {
+    showPlace(place);
+    map.flyTo({ center: [place.lng, place.lat], zoom: 10 });      // fly there
+  });
+
+  new maplibregl.Marker({ element: pin })
+    .setLngLat([place.lng, place.lat])
+    .addTo(map);
+});
+
+// Slow auto-rotate, stops when you grab the globe
+let spinning = true;
+
+function spin() {
+  if (!spinning) return;
+  const center = map.getCenter();
+  center.lng += 3;
+  map.easeTo({ center, duration: 1000, easing: t => t });
+}
+
+map.on("load", spin);
+map.on("moveend", spin);   // keep going after each small turn
+["pointerdown", "wheel"].forEach(type => {
+  globeEl.addEventListener(type, () => {
+    if (!spinning) return;   // only stop once, or it would cancel zooming too
+    spinning = false;
+    map.stop();
+  });
 });
 
 
