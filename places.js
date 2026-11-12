@@ -3,6 +3,10 @@
 // (These three are just EXAMPLES — replace them with your real trips.)
 //
 // To find lat/lng: right-click a spot in Google Maps and click the numbers.
+//
+// "spots" are the places we went inside a city (they show up when you zoom in).
+// Put photos in the photos/ folder, e.g. "photos/osaka/aquarium-1.jpg".
+// A city without spots shows its "itinerary" list instead.
 
 const places = [
   {
@@ -13,12 +17,47 @@ const places = [
     dates: "1/31/2025 - 2/7/2025",
     notes: "Our first overseas trip together!",
     photos: [],                      // e.g. ["photos/tokyo/1.jpg", "photos/tokyo/2.jpg"]
-    itinerary: [
-      "Day 1 – Visit Osaka Aquarium",
-      "Day 2 – Chill and explore Osaka Dotonbori",
-      "Day 3 – Universal Studios Day",
-      "Day 4 – Teamlabs Botanical Garden",
-      "Day 5 – Nara Deer Park"
+    spots: [
+      {
+        name: "Osaka Aquarium Kaiyukan",
+        lat: 34.6545,
+        lng: 135.4290,
+        date: "Day 1",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Dotonbori",
+        lat: 34.6687,
+        lng: 135.5013,
+        date: "Day 2",
+        notes: "Chill and explore",
+        photos: []
+      },
+      {
+        name: "Universal Studios Japan",
+        lat: 34.6654,
+        lng: 135.4323,
+        date: "Day 3",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "teamLab Botanical Garden",
+        lat: 34.6115,
+        lng: 135.5178,
+        date: "Day 4",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Nara Deer Park",
+        lat: 34.6851,
+        lng: 135.8430,
+        date: "Day 5",
+        notes: "",
+        photos: []
+      }
     ]
   },
   {

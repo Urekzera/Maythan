@@ -24,6 +24,33 @@ html, body {
   cursor: pointer;
 }
 
+/* A spot: small dot with its name in a white label */
+.spot-pin {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.spot-dot {
+  width: 14px;
+  height: 14px;
+  background: #ff4d6d;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.spot-label {
+  padding: 2px 8px;
+  background: #fff;
+  color: #222;
+  font-size: 13px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
 /* ---------- Side panel ---------- */
 #panel {
   position: fixed;
@@ -65,5 +92,33 @@ html, body {
   margin: 6px 0;
 }
 
+#back-btn {
+  display: none;
+  margin: 0 0 10px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #ff8fa3;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 #place-itinerary { padding-left: 18px; }
 #place-itinerary li { margin: 4px 0; }
+
+#place-spots { padding: 0; list-style: none; }
+#place-spots li { margin: 4px 0; }
+
+.spot-link {
+  width: 100%;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.spot-link:hover { background: rgba(255, 255, 255, 0.16); }
