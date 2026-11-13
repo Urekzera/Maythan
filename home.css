@@ -268,7 +268,7 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;   /* tall, like phone photos */
   object-fit: cover;
   border-radius: 14px;
   background: var(--icon-bg);
