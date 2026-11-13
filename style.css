@@ -41,6 +41,9 @@ html, body {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 
+/* Restaurants: yellow dot */
+.spot-pin.food .spot-dot { background: #ffc300; }
+
 .spot-label {
   padding: 2px 8px;
   background: #fff;
