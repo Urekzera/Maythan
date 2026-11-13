@@ -234,3 +234,122 @@ footer {
 }
 
 .coming-soon { color: var(--muted); }
+
+/* ---------- Cat cards ---------- */
+.cats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cat {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.cat-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.2), rgba(130, 90, 255, 0.2));
+  font-size: 64px;
+}
+
+.cat-name {
+  margin: 12px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Cats page: wider, and on big screens (computer) the cats sit side by side.
+   On phones they stay stacked top to bottom. */
+main.wide { max-width: 960px; }
+
+@media (min-width: 700px) {
+  .cats { flex-direction: row; }
+  .cat  { flex: 1; }
+}
+
+/* ---------- Lists (bucket list, food map) ---------- */
+.progress {
+  margin: 14px 0 0;
+  color: var(--pink-soft);
+  font-size: 14px;
+}
+
+.group-title {
+  margin: 28px 0 10px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+}
+
+.item.link { transition: background 0.2s, border-color 0.2s; }
+.item.link:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 143, 163, 0.5);
+}
+
+/* The round checkbox (bucket list) or icon (food map) */
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 2px solid rgba(255, 143, 163, 0.6);
+  border-radius: 50%;
+  font-size: 14px;
+  color: #fff;
+}
+
+.item.link .check { border: none; font-size: 18px; }
+
+.item.done .check {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+.item.done .item-text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.item-text { flex: 1; }
+
+.item-date {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--muted);
+}

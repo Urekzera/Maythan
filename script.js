@@ -187,3 +187,17 @@ function showSpot(spot, place) {
 document.getElementById("close-btn").addEventListener("click", () => {
   panel.classList.add("hidden");
 });
+
+
+// ---------- 3. Open straight at one spot ----------
+// e.g. map.html?spot=Taipei%20101  (the Food Map page links here)
+const wantedSpot = new URLSearchParams(location.search).get("spot");
+places.forEach(place => {
+  (place.spots || []).forEach(spot => {
+    if (spot.name !== wantedSpot) return;
+    spinning = false;
+    map.jumpTo({ center: [spot.lng, spot.lat], zoom: 15 });
+    updatePins();
+    showSpot(spot, place);
+  });
+});

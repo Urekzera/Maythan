@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Map · Nathan & May</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css?v=6" />
+</head>
+<body>
+
+  <a class="back" href="index.html">← Home</a>
+
+  <main>
+    <header>
+      <h1>Food Map</h1>
+      <p class="tagline">Everywhere we've eaten together</p>
+      <p class="progress" id="count"></p>
+    </header>
+
+    <!-- Filled in automatically from places.js: every spot with  type: "food" -->
+    <div id="food"></div>
+  </main>
+
+  <script src="places.js?v=2"></script>
+  <script>
+    const foodEl = document.getElementById("food");
+    let total = 0;
+
+    places.forEach(place => {
+      const food = (place.spots || []).filter(spot => spot.type === "food");
+      if (!food.length) return;
+      total += food.length;
+
+      // City heading
+      const h2 = document.createElement("h2");
+      h2.className = "group-title";
+      h2.textContent = place.name;
+      foodEl.appendChild(h2);
+
+      // One card per restaurant: tap it to see it on the map
+      const ul = document.createElement("ul");
+      ul.className = "list";
+      food.forEach(spot => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.className = "item link";
+        a.href = "map.html?spot=" + encodeURIComponent(spot.name);
+        a.innerHTML = '<span class="check">🍴</span><span class="item-text"></span><span class="item-date"></span>';
+        a.querySelector(".item-text").textContent = spot.name + (spot.notes ? ` · ${spot.notes}` : "");
+        a.querySelector(".item-date").textContent = spot.date;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      foodEl.appendChild(ul);
+    });
+
+    document.getElementById("count").textContent = `${total} places so far 🍜`;
+  </script>
+</body>
+</html>
