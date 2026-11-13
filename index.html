@@ -3,38 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Nathan & May</title>
+  <!-- Fonts: a fancy one for titles, a clean one for text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
 
-  <!-- The globe gets drawn into this div -->
-  <div id="globe"></div>
+  <main>
+    <header>
+      <!-- Our photo goes here later: delete the <div class="cover-placeholder">…</div>
+           and use this instead: <img id="cover" src="photos/us.jpg" alt="Nathan & May" /> -->
+      <div class="cover-placeholder">♥</div>
 
-  <!-- Side panel: hidden until you click a pin -->
-  <aside id="panel" class="hidden">
-    <button id="close-btn" aria-label="Close">&times;</button>
-    <button id="back-btn"></button>
-    <h2 id="place-name"></h2>
-    <p id="place-status"></p>
-    <p id="place-dates"></p>
-    <p id="place-notes"></p>
+      <h1>Nathan <span class="amp">&amp;</span> May</h1>
+      <p class="tagline">Our little corner of the world</p>
+    </header>
 
-    <div id="place-photos"></div>
+    <!-- Menu: one card per page. To add a page, copy one <a> and change it. -->
+    <nav class="menu">
+      <a class="card" href="map.html">
+        <span class="icon">🗺️</span>
+        <span class="text">
+          <span class="label">Our Map</span>
+          <span class="desc">Every place we've been together</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="card" href="cats.html">
+        <span class="icon">🐱</span>
+        <span class="text">
+          <span class="label">Our Cats</span>
+          <span class="desc">The furry members of the family</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
 
-    <h3 id="spots-title">Places we went</h3>
-    <ul id="place-spots"></ul>
+    <footer>made with ♥</footer>
+  </main>
 
-    <h3 id="itinerary-title">Itinerary</h3>
-    <ul id="place-itinerary"></ul>
-  </aside>
-
-  <!-- Libraries (loaded from the internet) -->
-  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-
-  <!-- Our own code. Order matters: data first, then the script that uses it -->
-  <script src="places.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
