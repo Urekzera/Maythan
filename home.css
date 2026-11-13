@@ -60,7 +60,7 @@ main {
 }
 
 /* ---------- Header ---------- */
-header { margin-bottom: 40px; }
+header { margin-bottom: 28px; }
 
 /* Our photo: the whole picture, with rounded corners and a soft pink glow */
 #cover {
@@ -106,6 +106,44 @@ h1 {
   color: var(--muted);
   font-size: 15px;
   letter-spacing: 1px;
+}
+
+/* ---------- Our numbers ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.num {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--pink-soft);
+}
+
+.stat-label {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+.since {
+  margin: 12px 0 32px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 /* ---------- Menu cards ---------- */
