@@ -122,3 +122,17 @@ html, body {
 }
 
 .spot-link:hover { background: rgba(255, 255, 255, 0.16); }
+
+/* Back-to-home button in the top-left corner */
+#home-btn {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  padding: 6px 14px;
+  background: rgba(15, 15, 25, 0.8);
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
