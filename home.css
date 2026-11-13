@@ -139,11 +139,11 @@ h1 {
 }
 
 .since {
-  margin: 12px 0 32px;
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
+  margin: 14px 0 32px;
+  font-family: "Nunito", system-ui, sans-serif;   /* same clean font as the rest of the text */
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 /* ---------- Menu cards ---------- */
@@ -375,12 +375,12 @@ main.wide { max-width: 960px; }
   main.home #cover {
     grid-column: 1;
     grid-row: 1 / span 5;
-    position: sticky;
-    top: 40px;
+    align-self: center;   /* line up with the middle of the right side, not the top */
     margin: 0;
   }
 
-  main.home header { margin-bottom: 24px; }
+  main.home header { margin-bottom: 24px; text-align: center; }
+  main.home .since { text-align: center; }
   main.home h1 { font-size: 60px; }
   main.home .stat { text-align: center; }
 
