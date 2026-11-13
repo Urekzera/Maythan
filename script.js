@@ -45,6 +45,7 @@ places.forEach(place => {
     spotPin.className = "spot-pin";
     spotPin.innerHTML = '<span class="spot-dot"></span><span class="spot-label"></span>';
     spotPin.querySelector(".spot-label").textContent = spot.name;
+    if (spot.type === "food") spotPin.classList.add("food");   // restaurants get a yellow dot
 
     spotPin.addEventListener("click", () => {
       showSpot(spot, place);
@@ -152,7 +153,7 @@ function showPlace(place) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.className = "spot-link";
-    btn.textContent = `${spot.date} – ${spot.name}`;
+    btn.textContent = `${spot.date} – ${spot.type === "food" ? "🍴 " : ""}${spot.name}`;
     btn.addEventListener("click", () => {
       showSpot(spot, place);
       map.flyTo({ center: [spot.lng, spot.lat], zoom: 15 });

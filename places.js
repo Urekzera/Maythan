@@ -7,6 +7,7 @@
 // "spots" are the places we went inside a city (they show up when you zoom in).
 // Put photos in the photos/ folder, e.g. "photos/osaka/aquarium-1.jpg".
 // A city without spots shows its "itinerary" list instead.
+// Add  type: "food"  to a spot to make it a restaurant (yellow pin, 🍴 in the list).
 
 const places = [
   {
@@ -192,7 +193,167 @@ const places = [
     dates: "",
     notes: "",
     photos: [],
-    itinerary: []
+    spots: [
+      {
+        name: "Vieshow Cinemas, FE21 Hsinchu (大遠百威秀影城)",
+        lat: 24.8013,
+        lng: 120.9650,
+        date: "2023/08/06",
+        notes: "Our first movie together – Oppenheimer",
+        photos: []
+      },
+      {
+        name: "Hsinchu City Art Gallery (新竹市美術館)",
+        lat: 24.8040,
+        lng: 120.9700,
+        date: "2023/08/12",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Nanliao (南寮)",
+        lat: 24.8483,
+        lng: 120.9254,
+        date: "2023/08/12",
+        notes: "Riding bikes",
+        photos: []
+      },
+      {
+        name: "Hanlin Tea House, Big City (翰林茶館 巨城店)",
+        lat: 24.8093,
+        lng: 120.9748,
+        date: "2023/08/12",
+        notes: "Lunch",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Jin Fu Vietnamese Pho (金福越南河粉)",
+        lat: 24.8085,
+        lng: 120.9655,
+        date: "2023/08/12",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "THSR Hsinchu Station (新竹高鐵站)",
+        lat: 24.8081,
+        lng: 121.0403,
+        date: "2023/08/13",
+        notes: "Picking Nathan up",
+        photos: []
+      },
+      {
+        name: "My DIY Baking Club (自己做烘焙聚樂部 新竹文化店)",
+        lat: 24.8045,
+        lng: 120.9678,
+        date: "2023/08/13",
+        notes: "Made a cake together!",
+        photos: []
+      },
+      {
+        name: "Taco House",
+        lat: 24.8040,
+        lng: 120.9708,
+        date: "2023/08/19",
+        notes: "Lunch",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "The Secret 謐謐 x Cat Island (貓嶼)",
+        lat: 24.8125,
+        lng: 120.9620,
+        date: "2023/08/19",
+        notes: "Watched and played with the cats",
+        photos: []
+      },
+      {
+        name: "J.Piin Mall (晶品城)",
+        lat: 24.8005,
+        lng: 120.9688,
+        date: "2023/08/29",
+        notes: "Escape room with May's friends 芳琦 and 舒羚",
+        photos: []
+      },
+      {
+        name: "Lavender Cottage, Jianshi (尖石薰衣草森林)",
+        lat: 24.7180,
+        lng: 121.1970,
+        date: "2023/10/14",
+        notes: "With 芳琦 (it's closed now)",
+        photos: []
+      },
+      {
+        name: "Matai Historic Trail (馬胎古道)",
+        lat: 24.7200,
+        lng: 121.1700,
+        date: "2023/10/14",
+        notes: "Went for a walk",
+        photos: []
+      },
+      {
+        name: "Leofoo Village Theme Park (六福村)",
+        lat: 24.7876,
+        lng: 121.1745,
+        date: "2023/10/21",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Oia Greek Taverna (伊亞希臘小館)",
+        lat: 24.8253,
+        lng: 121.0145,
+        date: "2023/10/21",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Eighter Food, Sanmin (八二親食 三民店)",
+        lat: 24.8045,
+        lng: 120.9795,
+        date: "2023/11/11",
+        notes: "Lunch",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Fu Tang Stone Spa (福湯岩盤浴)",
+        lat: 24.8180,
+        lng: 120.9730,
+        date: "2023/11/11",
+        notes: "Stone spa in the late afternoon",
+        photos: []
+      },
+      {
+        name: "Jolly Brewery, Big City (金色三麥 巨城店)",
+        lat: 24.8091,
+        lng: 120.9744,
+        date: "2023/11/11",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "My DIY Baking Club (自己做烘焙聚樂部 新竹文化店)",
+        lat: 24.8045,
+        lng: 120.9678,
+        date: "2023/11/17",
+        notes: "Made cream puffs!",
+        photos: []
+      },
+      {
+        name: "Lady Nara, SOGO Hsinchu",
+        lat: 24.8097,
+        lng: 120.9755,
+        date: "2023/11/18",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      }
+    ]
   },
   {
     name: "Taipei, Taiwan",
@@ -202,7 +363,94 @@ const places = [
     dates: "",
     notes: "",
     photos: [],
-    itinerary: []
+    spots: [
+      {
+        name: "Lazertreks (六度空間)",
+        lat: 25.0631,
+        lng: 121.5226,
+        date: "2023/07/29",
+        notes: "Laser tag with May's lab members, plus an escape room (forgot where!)",
+        photos: []
+      },
+      {
+        name: "Hooters Taipei",
+        lat: 25.0365,
+        lng: 121.5677,
+        date: "2023/07/29",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Taipei 101",
+        lat: 25.0340,
+        lng: 121.5645,
+        date: "2023/08/05",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Miacucina, Nanxi (Miacucina 南西店)",
+        lat: 25.0523,
+        lng: 121.5207,
+        date: "2023/08/17",
+        notes: "Lunch",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Potions Magic Bar (魔藥學餐酒館)",
+        lat: 25.0390,
+        lng: 121.5522,
+        date: "2023/08/17",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Taipei Zoo (台北市立動物園)",
+        lat: 24.9983,
+        lng: 121.5810,
+        date: "2023/11/03",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "MixGene Jewelry Studio (混合基因)",
+        lat: 25.0555,
+        lng: 121.5108,
+        date: "2023/11/25",
+        notes: "Made rings!",
+        photos: []
+      }
+    ]
+  },
+  {
+    name: "New Taipei, Taiwan",
+    lat: 25.0120,
+    lng: 121.4655,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    spots: [
+      {
+        name: "Christmasland in New Taipei (板橋耶誕城)",
+        lat: 25.0127,
+        lng: 121.4636,
+        date: "2023/11/29",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "New Taipei Metropolitan Park (新北大都會公園)",
+        lat: 25.0600,
+        lng: 121.4750,
+        date: "2023/12/03",
+        notes: "Kanahei fun run (卡納赫拉路跑)",
+        photos: []
+      }
+    ]
   },
   {
     name: "Taitung, Taiwan",
@@ -232,6 +480,15 @@ const places = [
     dates: "",
     notes: "",
     photos: [],
-    itinerary: []
+    spots: [
+      {
+        name: "Chimei Museum (奇美博物館)",
+        lat: 22.9347,
+        lng: 120.2264,
+        date: "2023/10/29",
+        notes: "",
+        photos: []
+      }
+    ]
   }
 ];
