@@ -1,11 +1,26 @@
 /* Styles for the home page and the cats page (the map has its own style.css) */
 * { box-sizing: border-box; }
 
+/* ---------- Colors ----------
+   Every color on the home, cats, food and bucket pages comes from here,
+   so changing the whole look only means changing these lines. */
 :root {
-  --pink: #ff4d6d;
-  --pink-soft: #ff8fa3;
-  --text: #f5f0fa;
-  --muted: rgba(245, 240, 250, 0.6);
+  --bg: #f6f3ee;                          /* page background: off-white */
+  --glow-1: transparent;                  /* soft glow, top left (none) */
+  --glow-2: transparent;                  /* soft glow, bottom right (none) */
+  --star: transparent;                    /* twinkling stars (transparent = none) */
+  --text: #26282d;                        /* main text: almost black */
+  --muted: rgba(38, 40, 45, 0.6);         /* small grey text */
+  --accent: #d1453b;                      /* main highlight color: red, from May's shirt */
+  --accent-soft: #d1453b;                 /* numbers, &, links */
+  --on-accent: #fff;                      /* text on top of --accent */
+  --surface: #ffffff;                     /* cards and boxes */
+  --surface-hover: #ffffff;
+  --line: rgba(38, 40, 45, 0.12);         /* card borders */
+  --line-hover: rgba(209, 69, 59, 0.5);
+  --accent-line: rgba(38, 40, 45, 0.15);
+  --icon-bg: #f4dcd8;                     /* the little square behind each icon */
+  --photo-shadow: 0 10px 30px rgba(38, 40, 45, 0.15);
 }
 
 body {
@@ -14,11 +29,10 @@ body {
   color: var(--text);
   font-family: "Nunito", system-ui, -apple-system, sans-serif;
   text-align: center;
-  /* Night sky: soft pink and purple glows on deep navy */
   background:
-    radial-gradient(circle at 20% 15%, rgba(255, 77, 109, 0.18), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(130, 90, 255, 0.18), transparent 45%),
-    #0b0b16;
+    radial-gradient(circle at 20% 15%, var(--glow-1), transparent 40%),
+    radial-gradient(circle at 85% 80%, var(--glow-2), transparent 45%),
+    var(--bg);
   background-attachment: fixed;
 }
 
@@ -29,14 +43,14 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(1px 1px at 10% 20%, #fff, transparent),
-    radial-gradient(1px 1px at 30% 70%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 50% 10%, #fff, transparent),
-    radial-gradient(1px 1px at 70% 40%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 90% 15%, #fff, transparent),
-    radial-gradient(1px 1px at 80% 90%, #fff, transparent),
-    radial-gradient(1px 1px at 15% 85%, #fff, transparent),
-    radial-gradient(1px 1px at 60% 60%, #fff, transparent);
+    radial-gradient(1px 1px at 10% 20%, var(--star), transparent),
+    radial-gradient(1px 1px at 30% 70%, var(--star), transparent),
+    radial-gradient(1.5px 1.5px at 50% 10%, var(--star), transparent),
+    radial-gradient(1px 1px at 70% 40%, var(--star), transparent),
+    radial-gradient(1.5px 1.5px at 90% 15%, var(--star), transparent),
+    radial-gradient(1px 1px at 80% 90%, var(--star), transparent),
+    radial-gradient(1px 1px at 15% 85%, var(--star), transparent),
+    radial-gradient(1px 1px at 60% 60%, var(--star), transparent);
   opacity: 0.6;
   animation: twinkle 4s ease-in-out infinite alternate;
 }
@@ -69,8 +83,8 @@ header { margin-bottom: 28px; }
   height: auto;
   margin: 0 auto 28px;
   border-radius: 18px;
-  border: 2px solid rgba(255, 143, 163, 0.6);
-  box-shadow: 0 0 0 6px rgba(255, 143, 163, 0.1), 0 12px 40px rgba(255, 77, 109, 0.3);
+  border: 2px solid var(--accent-line);
+  box-shadow: var(--photo-shadow);
 }
 
 .cover-placeholder {
@@ -78,13 +92,13 @@ header { margin-bottom: 28px; }
   height: 150px;
   margin: 0 auto 24px;
   border-radius: 50%;
-  border: 3px solid var(--pink-soft);
+  border: 3px solid var(--accent-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 56px;
-  color: var(--pink-soft);
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent-soft);
+  background: var(--surface);
 }
 
 h1 {
@@ -98,7 +112,7 @@ h1 {
 .amp {
   font-style: italic;
   font-weight: 500;
-  color: var(--pink-soft);
+  color: var(--accent-soft);
 }
 
 .tagline {
@@ -119,8 +133,8 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 14px 6px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 16px;
 }
 
@@ -128,7 +142,7 @@ h1 {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 30px;
   font-weight: 600;
-  color: var(--pink-soft);
+  color: var(--accent-soft);
 }
 
 .stat-label {
@@ -158,8 +172,8 @@ h1 {
   align-items: center;
   gap: 16px;
   padding: 18px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 18px;
   backdrop-filter: blur(8px);
   color: var(--text);
@@ -170,8 +184,8 @@ h1 {
 
 .card:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 143, 163, 0.5);
+  background: var(--surface-hover);
+  border-color: var(--line-hover);
 }
 
 .icon {
@@ -182,7 +196,7 @@ h1 {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(255, 77, 109, 0.25), rgba(130, 90, 255, 0.25));
+  background: var(--icon-bg);
   font-size: 26px;
 }
 
@@ -204,7 +218,7 @@ h1 {
 }
 
 .arrow {
-  color: var(--pink-soft);
+  color: var(--accent-soft);
   font-size: 20px;
   transition: transform 0.2s;
 }
@@ -225,10 +239,10 @@ footer {
   left: 16px;
   z-index: 1;
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 20px;
-  color: var(--pink-soft);
+  color: var(--accent-soft);
   text-decoration: none;
   font-size: 14px;
 }
@@ -244,8 +258,8 @@ footer {
 
 .cat {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 20px;
 }
 
@@ -257,7 +271,7 @@ footer {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(255, 77, 109, 0.2), rgba(130, 90, 255, 0.2));
+  background: var(--icon-bg);
   font-size: 64px;
 }
 
@@ -280,7 +294,7 @@ main.wide { max-width: 960px; }
 /* ---------- Lists (bucket list, food map) ---------- */
 .progress {
   margin: 14px 0 0;
-  color: var(--pink-soft);
+  color: var(--accent-soft);
   font-size: 14px;
 }
 
@@ -306,8 +320,8 @@ main.wide { max-width: 960px; }
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 14px;
   color: var(--text);
   text-align: left;
@@ -316,8 +330,8 @@ main.wide { max-width: 960px; }
 
 .item.link { transition: background 0.2s, border-color 0.2s; }
 .item.link:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 143, 163, 0.5);
+  background: var(--surface-hover);
+  border-color: var(--line-hover);
 }
 
 /* The round checkbox (bucket list) or icon (food map) */
@@ -328,17 +342,17 @@ main.wide { max-width: 960px; }
   flex-shrink: 0;
   width: 26px;
   height: 26px;
-  border: 2px solid rgba(255, 143, 163, 0.6);
+  border: 2px solid var(--accent-line);
   border-radius: 50%;
   font-size: 14px;
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .item.link .check { border: none; font-size: 18px; }
 
 .item.done .check {
-  background: var(--pink);
-  border-color: var(--pink);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .item.done .item-text {
