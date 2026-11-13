@@ -353,3 +353,47 @@ main.wide { max-width: 960px; }
   font-size: 12px;
   color: var(--muted);
 }
+
+/* ---------- Home page on big screens (computer) ----------
+   Photo on the left, everything else on the right, menu as a 2×2 grid.
+   Phones (narrower than 900px) keep the single column above. */
+@media (min-width: 900px) {
+  main.home {
+    max-width: 1200px;
+    padding: 80px 40px 32px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    column-gap: 56px;
+    align-items: start;
+    align-content: center;   /* sit in the middle of the screen, top to bottom */
+    min-height: 100vh;
+    text-align: left;
+  }
+
+  main.home > * { grid-column: 2; }
+
+  main.home #cover {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    position: sticky;
+    top: 40px;
+    margin: 0;
+  }
+
+  main.home header { margin-bottom: 24px; }
+  main.home h1 { font-size: 60px; }
+  main.home .stat { text-align: center; }
+
+  main.home .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  main.home .card { padding: 16px; gap: 12px; }
+  main.home .arrow { display: none; }
+
+  main.home footer {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
