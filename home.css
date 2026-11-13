@@ -62,22 +62,23 @@ main {
 /* ---------- Header ---------- */
 header { margin-bottom: 40px; }
 
-#cover,
+/* Our photo: the whole picture, with rounded corners and a soft pink glow */
+#cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 28px;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 143, 163, 0.6);
+  box-shadow: 0 0 0 6px rgba(255, 143, 163, 0.1), 0 12px 40px rgba(255, 77, 109, 0.3);
+}
+
 .cover-placeholder {
   width: 150px;
   height: 150px;
   margin: 0 auto 24px;
   border-radius: 50%;
   border: 3px solid var(--pink-soft);
-  box-shadow: 0 0 0 8px rgba(255, 143, 163, 0.12), 0 10px 40px rgba(255, 77, 109, 0.3);
-}
-
-#cover {
-  display: block;
-  object-fit: cover;
-}
-
-.cover-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
