@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bucket List · Nathan & May</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css?v=6" />
+</head>
+<body>
+
+  <a class="back" href="index.html">← Home</a>
+
+  <main>
+    <header>
+      <h1>Bucket List</h1>
+      <p class="tagline">Things we want to do together</p>
+      <p class="progress" id="progress"></p>
+    </header>
+
+    <!-- The list is filled in from bucket.js -->
+    <ul class="list" id="bucket"></ul>
+  </main>
+
+  <!-- After changing bucket.js, bump the ?v= number so phones load the new list -->
+  <script src="bucket.js?v=1"></script>
+  <script>
+    const listEl = document.getElementById("bucket");
+
+    // Not done yet first, then the ones we've done
+    const sorted = [...bucketList].sort((a, b) => a.done - b.done);
+
+    sorted.forEach(item => {
+      const li = document.createElement("li");
+      li.className = "item" + (item.done ? " done" : "");
+      li.innerHTML = '<span class="check"></span><span class="item-text"></span><span class="item-date"></span>';
+      li.querySelector(".check").textContent = item.done ? "✓" : "";
+      li.querySelector(".item-text").textContent = item.text;
+      li.querySelector(".item-date").textContent = item.date || "";
+      listEl.appendChild(li);
+    });
+
+    const doneCount = bucketList.filter(item => item.done).length;
+    document.getElementById("progress").textContent = `${doneCount} of ${bucketList.length} done ♥`;
+  </script>
+</body>
+</html>
