@@ -8,12 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="home.css?v=8" />
+  <link rel="stylesheet" href="home.css?v=10" />
 </head>
 <body>
 
-  <!-- On phones everything is one column; on computers the photo is on the left
-       and everything else on the right (see "Home page on big screens" in home.css) -->
+  <!-- Phone home page (one column). On computers this is hidden and the
+       board game below is shown instead (see "Board-game home page" in home.css) -->
   <main class="home">
     <!-- Our photo (to change it, replace photos/us.jpg and bump ?v= so phones load the new one) -->
     <img id="cover" src="photos/us.jpg?v=2" alt="Nathan & May" />
@@ -79,8 +79,22 @@
     <footer>made with ♥</footer>
   </main>
 
+  <!-- Computer only: board-game home page. The 16 tiles around the edge are
+       made by home.js (edit the "tiles" list there to change them). -->
+  <section class="board" id="board">
+    <div class="board-center">
+      <img class="board-photo" src="photos/us.jpg?v=2" alt="Nathan & May" />
+      <h1>Nathan <span class="amp">&amp;</span> May</h1>
+      <div class="dice-row">
+        <span class="dice-face" id="dice-face">🎲</span>
+        <button class="dice-btn" id="dice-btn">Roll the dice</button>
+      </div>
+      <p class="board-msg" id="board-msg">Roll the dice and see where we go ♥</p>
+    </div>
+  </section>
+
   <!-- places.js is shared with the map, so the numbers update when we add places -->
   <script src="places.js?v=2"></script>
-  <script src="home.js?v=2"></script>
+  <script src="home.js?v=3"></script>
 </body>
 </html>
