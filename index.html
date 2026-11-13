@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="home.css?v=2" />
+  <link rel="stylesheet" href="home.css?v=3" />
 </head>
 <body>
 
@@ -20,6 +20,23 @@
       <h1>Nathan <span class="amp">&amp;</span> May</h1>
       <p class="tagline">Our little corner of the world</p>
     </header>
+
+    <!-- Our numbers: filled in by home.js -->
+    <section class="stats">
+      <div class="stat">
+        <span class="num" id="days">–</span>
+        <span class="stat-label">days together</span>
+      </div>
+      <div class="stat">
+        <span class="num" id="countries">–</span>
+        <span class="stat-label">countries</span>
+      </div>
+      <div class="stat">
+        <span class="num" id="cities">–</span>
+        <span class="stat-label">cities</span>
+      </div>
+    </section>
+    <p class="since">since July 31, 2023 ♥</p>
 
     <!-- Menu: one card per page. To add a page, copy one <a> and change it. -->
     <nav class="menu">
@@ -44,5 +61,8 @@
     <footer>made with ♥</footer>
   </main>
 
+  <!-- places.js is shared with the map, so the numbers update when we add places -->
+  <script src="places.js?v=2"></script>
+  <script src="home.js?v=2"></script>
 </body>
 </html>
