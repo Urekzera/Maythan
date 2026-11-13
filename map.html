@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Map · Nathan & May</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
 
@@ -36,8 +36,10 @@
   <!-- Libraries (loaded from the internet) -->
   <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
 
-  <!-- Our own code. Order matters: data first, then the script that uses it -->
-  <script src="places.js"></script>
-  <script src="script.js"></script>
+  <!-- Our own code. Order matters: data first, then the script that uses it.
+       After you change places.js / script.js / style.css, bump the ?v= number
+       (e.g. ?v=2 → ?v=3) so phones download the new version instead of an old saved copy. -->
+  <script src="places.js?v=2"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
