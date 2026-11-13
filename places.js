@@ -422,6 +422,15 @@ const places = [
         date: "2023/11/25",
         notes: "Made rings!",
         photos: []
+      },
+      {
+        name: "To Infinity and Beyond (酒吧)",
+        lat: 25.043,
+        lng: 121.5497,
+        date: "2023/12/30",
+        notes: "Bar",
+        type: "food",
+        photos: []
       }
     ]
   },
@@ -449,6 +458,42 @@ const places = [
         date: "2023/12/03",
         notes: "Kanahei fun run (卡納赫拉路跑)",
         photos: []
+      },
+      {
+        name: "Miacucina, Yulon Xindian (Miacucina 新店裕隆城)",
+        lat: 24.979,
+        lng: 121.541,
+        date: "2023/12/31",
+        notes: "",
+        type: "food",
+        photos: []
+      }
+    ]
+  },
+  {
+    name: "Miaoli, Taiwan",
+    lat: 24.5602,
+    lng: 120.8214,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    spots: [
+      {
+        name: "Fugui Strawberry Farm, Dahu (大湖富興村 富貴草莓園)",
+        lat: 24.437,
+        lng: 120.866,
+        date: "2024/01/20",
+        notes: "Strawberry picking! 🍓",
+        photos: []
+      },
+      {
+        name: "Nanjiang Village, Nanzhuang (南庄鄉南江村)",
+        lat: 24.585,
+        lng: 121.01,
+        date: "2024/01/20",
+        notes: "",
+        photos: []
       }
     ]
   },
@@ -460,7 +505,16 @@ const places = [
     dates: "",
     notes: "",
     photos: [],
-    itinerary: []
+    spots: [
+      {
+        name: "Xinfu Village, Guanshan (關山鎮新福里)",
+        lat: 23.043,
+        lng: 121.163,
+        date: "2024/01/26",
+        notes: "",
+        photos: []
+      }
+    ]
   },
   {
     name: "Taichung, Taiwan",
