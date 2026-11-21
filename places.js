@@ -352,6 +352,14 @@ const places = [
         notes: "Dinner",
         type: "food",
         photos: []
+      },
+      {
+        name: "Big City (巨城購物中心)",
+        lat: 24.8095,
+        lng: 120.975,
+        date: "2024/03/16",
+        notes: "",
+        photos: []
       }
     ]
   },
@@ -467,6 +475,15 @@ const places = [
         notes: "",
         type: "food",
         photos: []
+      },
+      {
+        name: "TOK, Yulon Xindian (TOK 新店裕隆城)",
+        lat: 24.9792,
+        lng: 121.5412,
+        date: "2024/02/18",
+        notes: "",
+        type: "food",
+        photos: []
       }
     ]
   },
@@ -513,6 +530,30 @@ const places = [
         date: "2024/01/26",
         notes: "",
         photos: []
+      },
+      {
+        name: "Guanshan Station (關山車站)",
+        lat: 23.0466,
+        lng: 121.1638,
+        date: "2024/01/26",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Chulu Ranch (初鹿牧場)",
+        lat: 22.802,
+        lng: 121.07,
+        date: "2024/01/27",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Dulan Sea-View Platform (都蘭觀海平台)",
+        lat: 22.873,
+        lng: 121.237,
+        date: "2024/01/27",
+        notes: "",
+        photos: []
       }
     ]
   },
@@ -541,6 +582,42 @@ const places = [
         lng: 120.2264,
         date: "2023/10/29",
         notes: "",
+        photos: []
+      },
+      {
+        name: "2024 Taiwan Lantern Festival, Guiren (台灣燈會 歸仁)",
+        lat: 22.925,
+        lng: 120.286,
+        date: "2024/03/02",
+        notes: "Next to THSR Tainan Station",
+        photos: []
+      }
+    ]
+  },
+  {
+    name: "Taoyuan, Taiwan",
+    lat: 24.9937,
+    lng: 121.3010,
+    visited: true,
+    dates: "",
+    notes: "",
+    photos: [],
+    spots: [
+      {
+        name: "Xpark Aquarium, Qingpu (Xpark 青埔)",
+        lat: 25.0145,
+        lng: 121.215,
+        date: "2024/04/20",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Gonna Eat, Qingpu (青埔)",
+        lat: 25.0165,
+        lng: 121.216,
+        date: "2024/04/20",
+        notes: "",
+        type: "food",
         photos: []
       }
     ]

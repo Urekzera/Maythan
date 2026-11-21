@@ -6,6 +6,8 @@
 const bucketList = [
   { text: "See the northern lights", done: false },
   { text: "Visit Tokyo together", done: false },
+  { text: "Watch a sunrise together", done: false },
+  { text: "Watch a sunset together", done: false },
   { text: "Make a cake together", done: true, date: "2023/08/13" },
   { text: "Make matching rings", done: true, date: "2023/11/25" }
 ];
