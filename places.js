@@ -15,31 +15,48 @@ const places = [
     lat: 34.6937,
     lng: 135.5023,
     visited: true,
-    dates: "1/31/2025 - 2/7/2025",
+    dates: "1/31/2025 - 2/8/2025",
     notes: "Our first overseas trip together!",
     photos: [],                      // e.g. ["photos/tokyo/1.jpg", "photos/tokyo/2.jpg"]
     spots: [
       {
+        name: "Kinmugi Ramen, Kitahorie (金麥 北堀江)",
+        lat: 34.6745,
+        lng: 135.493,
+        date: "2025/02/01",
+        notes: "Super good ramen! 🍜",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Nishi-Shinsaibashi (西心齋橋)",
+        lat: 34.6735,
+        lng: 135.4975,
+        date: "2025/02/01",
+        notes: "",
+        photos: []
+      },
+      {
         name: "Osaka Aquarium Kaiyukan",
         lat: 34.6545,
-        lng: 135.4290,
-        date: "Day 1",
-        notes: "",
+        lng: 135.429,
+        date: "2025/02/01",
+        notes: "Dinner: Japanese McDonald's near our place, first milkshake, so good!",
         photos: []
       },
       {
         name: "Dotonbori",
         lat: 34.6687,
         lng: 135.5013,
-        date: "Day 2",
-        notes: "Chill and explore",
+        date: "2025/02/02",
+        notes: "The Glico running man! Okonomiyaki for lunch, wandered around, then an izakaya near our place (the staff were shocked we couldn't speak Japanese and used phone translation 😂)",
         photos: []
       },
       {
         name: "Universal Studios Japan",
         lat: 34.6654,
         lng: 135.4323,
-        date: "Day 3",
+        date: "2025/02/03",
         notes: "",
         photos: []
       },
@@ -47,16 +64,41 @@ const places = [
         name: "teamLab Botanical Garden",
         lat: 34.6115,
         lng: 135.5178,
-        date: "Day 4",
-        notes: "",
+        date: "2025/02/04",
+        notes: "Cold and hungry after, almost everything was closed, but one sashimi place was open. No salmon left, but our first really good tuna!",
         photos: []
       },
       {
         name: "Nara Deer Park",
         lat: 34.6851,
-        lng: 135.8430,
-        date: "Day 5",
+        lng: 135.843,
+        date: "2025/02/05",
+        notes: "It started snowing and Nathan said it wasn't snow, just stuff from the trees XDD",
+        photos: []
+      },
+      {
+        name: "Wakakusa Curry Honpo, Nara (若草咖哩本舖)",
+        lat: 34.68,
+        lng: 135.829,
+        date: "2025/02/05",
+        notes: "Curry rice for lunch",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Pokémon Center Osaka (寶可夢中心)",
+        lat: 34.7025,
+        lng: 135.496,
+        date: "2025/02/06",
         notes: "",
+        photos: []
+      },
+      {
+        name: "Shinsaibashi (心齋橋)",
+        lat: 34.674,
+        lng: 135.501,
+        date: "2025/02/07",
+        notes: "Shopping again 🛍️ Flew home 2/8",
         photos: []
       }
     ]
@@ -360,6 +402,23 @@ const places = [
         date: "2024/03/16",
         notes: "",
         photos: []
+      },
+      {
+        name: "Huan Ju Tang Rotating Skewers (歡聚堂 / 旋轉串燒 / 清酒)",
+        lat: 24.8301,
+        lng: 121.0271,
+        date: "2024/12/06",
+        notes: "Dinner",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Waste Mother Farm (廢物媽媽農場)",
+        lat: 24.77,
+        lng: 120.913,
+        date: "2024/12/08",
+        notes: "",
+        photos: []
       }
     ]
   },
@@ -439,6 +498,32 @@ const places = [
         notes: "Bar",
         type: "food",
         photos: []
+      },
+      {
+        name: "Potions Magic Bar (魔藥學餐酒館)",
+        lat: 25.0392,
+        lng: 121.5525,
+        date: "2024/11/22",
+        notes: "May's birthday 🎂",
+        type: "food",
+        photos: []
+      },
+      {
+        name: "Taipei City Hall Bus Station (市府轉運站)",
+        lat: 25.041,
+        lng: 121.565,
+        date: "2024/11/23",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Second Floor Cafe, NTNU (貳樓 師大店)",
+        lat: 25.0254,
+        lng: 121.5291,
+        date: "2025/02/28",
+        notes: "",
+        type: "food",
+        photos: []
       }
     ]
   },
@@ -483,6 +568,14 @@ const places = [
         date: "2024/02/18",
         notes: "",
         type: "food",
+        photos: []
+      },
+      {
+        name: "New Taipei Metropolitan Park (新北大都會公園)",
+        lat: 25.0605,
+        lng: 121.4758,
+        date: "2024/11/17",
+        notes: "Pokémon fun run (寶可夢路跑)",
         photos: []
       }
     ]
@@ -565,7 +658,25 @@ const places = [
     dates: "",
     notes: "",
     photos: [],
-    itinerary: []
+    spots: [
+      {
+        name: "National Museum of Natural Science (國立自然科學博物館)",
+        lat: 24.1574,
+        lng: 120.666,
+        date: "2024/11/09",
+        notes: "",
+        photos: []
+      },
+      {
+        name: "Miyahara (宮原眼科)",
+        lat: 24.1377,
+        lng: 120.6835,
+        date: "2024/11/09",
+        notes: "",
+        type: "food",
+        photos: []
+      }
+    ]
   },
   {
     name: "Tainan, Taiwan",
@@ -618,6 +729,14 @@ const places = [
         date: "2024/04/20",
         notes: "",
         type: "food",
+        photos: []
+      },
+      {
+        name: "Taoyuan International Airport (桃園國際機場)",
+        lat: 25.0797,
+        lng: 121.2342,
+        date: "2025/01/31",
+        notes: "Our first trip abroad together! ✈️",
         photos: []
       }
     ]

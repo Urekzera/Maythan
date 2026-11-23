@@ -24,7 +24,7 @@ html, body {
   cursor: pointer;
 }
 
-/* A spot: small dot with its name in a white label */
+/* A spot: small dot; its name (white label) shows on hover */
 .spot-pin {
   display: flex;
   align-items: center;
@@ -53,6 +53,20 @@ html, body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   white-space: nowrap;
 }
+
+/* Names stay hidden so they don't cover other dots;
+   a name shows only when the mouse is on its dot */
+.spot-label {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.spot-pin:hover .spot-label {
+  visibility: visible;
+  opacity: 1;
+}
+/* the hovered spot sits on top of the others */
+.maplibregl-marker:hover { z-index: 5; }
 
 /* ---------- Side panel ---------- */
 #panel {
