@@ -1,0 +1,57 @@
+// Movies we've watched together.
+// To add one, copy a line and change it.
+//   category: the group it shows under (make up any name you like)
+//   done:     true = we watched it, false = we want to watch it (shows under "Want to Watch")
+//   nathan / may: our ratings out of 10 (optional)
+//   notes:    a short comment (optional)
+
+const items = [
+  { name: "Soul", category: "Animation", done: true, notes: "Animated movie about a guy trying to find his purpose in life + a soul stuck outside earth", nathan: 7.5, may: 8 },
+  { name: "Don't Look Up", category: "Sci-fi", done: true, notes: "Sci-fi comedy about a comet hitting earth and the lack of fucks everyone gave", nathan: 7, may: 6.5 },
+  { name: "Oppenheimer", category: "Non-fiction", done: true, notes: "Based on the story of Oppenheimer, creator of the atomic bomb", nathan: 8.5, may: 8.5 },
+  { name: "Ford v Ferrari", category: "Non-fiction", done: true, notes: "Based on a true story about a guy who was really good at racing", nathan: 8, may: 9 },
+  { name: "Now You See Me (1+2)", category: "Mindfuck", done: true, notes: "Movie about magic + illusion + a fuck ton of plot twists", nathan: 8, may: 9 },
+  { name: "Hunger Games prequel", category: "Action", done: true, notes: "Prequel to hunger games, about life of President Snow", nathan: 8, may: 7 },
+  { name: "The First Avengers", category: "Marvel", done: true, notes: "Loki uses staff to get aliens to invade Avengers are assembled to stop him (Iron Man, Cap 'Merica, Hulk, Black Widow, Thor, Hawkeye (useless mfer))", nathan: 9, may: 7 },
+  { name: "Iron Man 3", category: "Marvel", done: true, notes: "Tony vs terrorist called the \"Mandarin\" and a bunch of dudes who can turn into bombs", nathan: 7.5, may: 7.5 },
+  { name: "Thor: The Dark World", category: "Marvel", done: true, notes: "Dark elves look for Aether and try to destroy all the worlds when the parallel allignment happens", nathan: 8, may: 6.5 },
+  { name: "Captain America: The Winter Soldier", category: "Marvel", done: true, notes: "Steve's old friend Bucky is discovered to be alive and is an assassin known as the \"winter soldier\"", nathan: 8, may: 7 },
+  { name: "Guardians of the Galaxy", category: "Marvel", done: true, notes: "Starlord, rocket, groot, amora group up to stop the blue dude from getting an inifinity stone", nathan: 9, may: 8.5 },
+  { name: "Avengers: Age of Ultron", category: "Marvel", done: true, notes: "Tony creates an AI that goes rogue and nearly destroys the world, Avengers group up to stop it", nathan: 8, may: 8.5 },
+  { name: "Ant-Man", category: "Marvel", done: true, notes: "Guy teams up with old guy and his daughter to stop a pyscho motherfucker from creating suits that can shrink people", nathan: 8.5, may: 8.5 },
+  { name: "Captain America: Civil War", category: "Marvel", done: true, notes: "Russian dude who's mad about what happened with Ultron tries to incite civil war amongst the Avengers by showing Tony that Bucky killed his parents. Unfortunately for him Cap. 'Merica beat his ass up", nathan: 8.5, may: 8 },
+  { name: "Doctor Strange", category: "Marvel", done: true, notes: "Dr Strange gets in car crash and can't be a surgeon anymore. Goes to Tibet and joins a cult + learns superpowers", nathan: 8, may: 9 },
+  { name: "Guardians of the Galaxy 2", category: "Marvel", done: true, notes: "Guardians team up vs Ego, Starlords dad", nathan: 8, may: 8 },
+  { name: "Spider-Man: Homecoming", category: "Marvel", done: true, notes: "spiderman tries to get ironmans attention and fights vs vulture", nathan: 7.5, may: 7 },
+  { name: "Thor: Ragnarok", category: "Marvel", done: true, notes: "Thor must find a way to stop his sister Hela and save Asgard from Ragnarok", nathan: 8.5, may: 8 },
+  { name: "Black Panther", category: "Marvel", done: true, notes: "T'challa, the king of wakanda, is challenged by his cousin Killmonger for the throne. Because Killmonger wants to use the strongest metal Vibranium to rule the world and help their people to fight back. Moreover, he wants to revenge for his father's death.", nathan: 8.5, may: 10 },
+  { name: "Avengers: Infinity War", category: "Marvel", done: true, notes: "Thanos wants to collect the six infinity stones to destroy half of lives in the universe. So the avengers gather around to fight him. Unfortunately they fail.", nathan: 9.5, may: 10 },
+  { name: "Ant-Man and the Wasp", category: "Marvel", done: true, notes: "lang + hope try and do some quantum shit and find hopes mom", nathan: 7.5, may: 7.5 },
+  { name: "Captain Marvel", category: "Marvel", done: true, notes: "Marvel uncovers her past life and how she came to work for the Kree. Also shapeshifting aliens", nathan: 7, may: 7 },
+  { name: "Avengers: Endgame", category: "Marvel", done: true, notes: "Remaining avengers travel back in time to get the six stones and undo Thanos' destruction", nathan: 9, may: 10 },
+  { name: "Spider-Man: Far From Home", category: "Marvel", done: true },
+  { name: "Black Widow", category: "Marvel", done: true },
+  { name: "Shang-Chi and the Legend of the Ten Rings", category: "Marvel", done: true },
+  { name: "Eternals", category: "Marvel", done: true },
+  { name: "Spider-Man: No Way Home", category: "Marvel", done: true },
+  { name: "Doctor Strange in the Multiverse of Madness", category: "Marvel", done: true },
+  { name: "Thor: Love and Thunder", category: "Marvel", done: true },
+  { name: "Black Panther: Wakanda Forever", category: "Marvel", done: true },
+  { name: "Ant-Man and the Wasp: Quantumania", category: "Marvel", done: false },
+  { name: "Guardians of the Galaxy 3", category: "Marvel", done: false },
+  { name: "Wonka", category: "Family", done: true, notes: "The story of how Willy Wonka made his name", nathan: 8, may: 7.5 },
+  { name: "Maze Runner", category: "Action", done: false },
+  { name: "Avatar", category: "Sci-fi", done: false },
+  { name: "Planet of the Apes", category: "Action", done: false },
+  { name: "Kingsman", category: "Action", done: true, notes: "Eggsy follows in his fathers footsteps to become an agent for kingslayer. His mission is to stop Valentine from comitting genocide using his micro chips embedded in everyones phones" },
+  { name: "Planet Earth", category: "Other", done: false },
+  { name: "Tenet", category: "Other", done: false },
+  { name: "Spaceman", category: "Other", done: false },
+  { name: "Everything Everywhere All at Once", category: "Other", done: false },
+  { name: "Dune", category: "Other", done: false },
+  { name: "Dune: Part Two", category: "Other", done: false },
+  { name: "The Wandering Earth", category: "Other", done: false },
+  { name: "The Batman", category: "Other", done: false },
+  { name: "Ultraman: Rising", category: "Other", done: false },
+  { name: "Jumanji", category: "Other", done: false }
+];

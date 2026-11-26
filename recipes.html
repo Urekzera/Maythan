@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recipes · Nathan & May</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css?v=15" />
+</head>
+<body>
+
+  <a class="back" href="index.html">← Home</a>
+
+  <main>
+    <header>
+      <h1>Recipes</h1>
+      <p class="tagline">Things we cook together</p>
+      <p class="progress" id="count"></p>
+    </header>
+
+    <!-- Filled in from recipes.js. Tap a recipe to open it. -->
+    <div id="list"></div>
+  </main>
+
+  <!-- After changing recipes.js, bump the ?v= number so phones load the new list -->
+  <script src="recipes.js?v=1"></script>
+  <script>
+    const box = document.getElementById("list");
+    const categories = [...new Set(recipes.map(r => r.category || "Other"))];
+
+    categories.forEach(category => {
+      const h2 = document.createElement("h2");
+      h2.className = "group-title";
+      h2.textContent = category;
+      box.appendChild(h2);
+
+      const list = document.createElement("div");
+      list.className = "list";
+
+      recipes.filter(r => (r.category || "Other") === category).forEach(r => {
+        // <details> = a box that opens and closes when you tap its title
+        const card = document.createElement("details");
+        card.className = "item recipe icon-only";
+        card.innerHTML =
+          '<summary><span class="check">🍳</span>' +
+          '<span class="item-main"><span class="item-text"></span><span class="item-sub"></span></span>' +
+          '<span class="item-date"></span></summary>' +
+          '<div class="recipe-body"><h3>Ingredients</h3><ul class="ingredients"></ul>' +
+          '<h3>Steps</h3><ol class="steps"></ol></div>';
+
+        card.querySelector(".item-text").textContent = r.name;
+        card.querySelector(".item-sub").textContent = r.notes || "";
+        card.querySelector(".item-date").textContent = r.time || "";
+        (r.ingredients || []).forEach(text => {
+          const li = document.createElement("li");
+          li.textContent = text;
+          card.querySelector(".ingredients").appendChild(li);
+        });
+        (r.steps || []).forEach(text => {
+          const li = document.createElement("li");
+          li.textContent = text;
+          card.querySelector(".steps").appendChild(li);
+        });
+        list.appendChild(card);
+      });
+
+      box.appendChild(list);
+    });
+
+    document.getElementById("count").textContent = `${recipes.length} recipes so far 🍰`;
+  </script>
+</body>
+</html>
