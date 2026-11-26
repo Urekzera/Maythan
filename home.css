@@ -488,3 +488,33 @@ main.wide { max-width: 960px; }
   margin: 0;
   padding-left: 20px;
 }
+
+/* Games, TV shows, movies, recipes on big screens:
+   the whole list (headings + cards) flows into side-by-side columns,
+   so you don't have to scroll so much. Phones keep one column. */
+@media (min-width: 700px) {
+  main.collection { max-width: 1400px; padding-left: 32px; padding-right: 32px; }
+  main.collection #list {
+    columns: 260px 4;       /* as many 260px-wide columns as fit, up to 4 */
+    column-gap: 16px;
+    text-align: left;
+  }
+  main.collection .group-title {
+    break-after: avoid;     /* keep a heading with its first card */
+  }
+  main.collection #list > .group-title:first-child { margin-top: 0; }
+  main.collection .list { display: block; }
+  main.collection .list > * {
+    break-inside: avoid;    /* never cut a card in half between columns */
+    margin-bottom: 10px;
+  }
+  /* long comments: show 3 lines, the rest when the mouse is on the card */
+  main.collection .item-sub {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  main.collection .item:hover .item-sub { -webkit-line-clamp: unset; }
+  main.collection .item-sub:empty { display: none; }
+}
