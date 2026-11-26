@@ -490,23 +490,16 @@ main.wide { max-width: 960px; }
 }
 
 /* Games, TV shows, movies, recipes on big screens:
-   the whole list (headings + cards) flows into side-by-side columns,
-   so you don't have to scroll so much. Phones keep one column. */
+   each category gets its own row, with its cards side by side
+   (as many as fit across, then the next line). Phones keep one column. */
 @media (min-width: 700px) {
   main.collection { max-width: 1400px; padding-left: 32px; padding-right: 32px; }
-  main.collection #list {
-    columns: 260px 4;       /* as many 260px-wide columns as fit, up to 4 */
-    column-gap: 16px;
-    text-align: left;
-  }
-  main.collection .group-title {
-    break-after: avoid;     /* keep a heading with its first card */
-  }
-  main.collection #list > .group-title:first-child { margin-top: 0; }
-  main.collection .list { display: block; }
-  main.collection .list > * {
-    break-inside: avoid;    /* never cut a card in half between columns */
-    margin-bottom: 10px;
+  main.collection #list { text-align: left; }
+  main.collection .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    align-items: start;
   }
   /* long comments: show 3 lines, the rest when the mouse is on the card */
   main.collection .item-sub {
